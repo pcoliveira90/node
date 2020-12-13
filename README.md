@@ -1,12 +1,2 @@
-Criar o arquivo package
-npm init
-
-Gerencia as requisições, rotas e URLS
-npm install express
-
-
-npm install -g nodemon
-
-npm install --save mongodb 
-
-npm install --save mongoose
+Iniciando meus estudos de NODE.js segue exemplo de uma API básica utilizando node.js .
+Está API foi criada baseado-se no tutorial do seguinte link: https://celke.com.br/artigo/como-criar-api-com-node-js-parte-1
