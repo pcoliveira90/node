@@ -21,6 +21,32 @@ app.get("/", (req, res)=>{
     return res.json({titulo:"Como criar API"});
 });
 
+app.get("/artigo", (req, res)=>{
+    Artigo.find({}).then((artigo)=>{
+        return res.json(artigo);
+    }).catch((erro)=>{
+        return res.status(400).json({
+            error:true,
+            message:"Nenhum artigo encontrado!"
+        })
+
+    });
+});
+
+app.get("/artigo/:id", (req, res)=>{
+    console.log(req.params.id);
+    Artigo.findOne({_id:req.params.id}).then((artigo)=>{
+        return res.json(artigo);
+    }).catch((erro)=>{
+        return res.status(400).json({
+            error:true,
+            message:"Artigo não encontrado!"
+        })
+
+    });
+});
+
+
 app.post("/artigo",(req,res)=>{
     const artigo = Artigo.create(req.body, (err)=>{
 
